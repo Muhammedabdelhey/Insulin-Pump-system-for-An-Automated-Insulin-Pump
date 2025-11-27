@@ -1,0 +1,15 @@
+input.ng-invalid.ng-touched{
+    border:1px solid red;
+}
+
+input {
+    width: 550px;margin: auto;
+}
+
+.errMsg{
+    color:red;
+    font-weight: bold;
+}
+label{
+    font-weight:bold ;
+}

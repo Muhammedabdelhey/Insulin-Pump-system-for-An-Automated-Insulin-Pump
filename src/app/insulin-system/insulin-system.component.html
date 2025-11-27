@@ -1,0 +1,45 @@
+<form style="text-align: center;" (submit)="onSubmit(contactForm)" #contactForm="ngForm">
+
+  <div class="header" style="color: #009879;">
+    <br>
+    <h2>Insulin Pump System</h2>
+    <br>
+  </div>
+
+  <div class="form-row">
+    <label for="inputName">Patient Name</label>
+    <input type="text" class="form-control" ngModel name="name" #nameTxt="ngModel" required>
+    <p class="errMsg" *ngIf="!nameTxt.valid && nameTxt.touched">name is required</p>
+  </div>
+
+  <div class="form-row">
+    <br>
+    <label for="inputID">Patient ID (SSN)</label>
+    <input type="number" class="form-control" ngModel name="ID" #IDTxt="ngModel" required>
+    <p class="errMsg" *ngIf="!IDTxt.valid && IDTxt.touched">ID is required</p>
+  </div>
+
+
+  <div class="form-row">
+    <br>
+    <label for="inputWieght">Patient Weight per Pounds</label>
+    <input type="number" class="form-control" ngModel name="Wieght" #WieghtTxt="ngModel" required>
+    <p class="errMsg" *ngIf="!WieghtTxt.valid && WieghtTxt.touched">Weight is required</p>
+  </div>
+
+  <div class="form-row">
+    <br>
+    <label for="inputBloodSugar">Patient Blood Suger</label>
+    <input type="number" class="form-control" ngModel name="BloodSugar" #BloodSugarTxt="ngModel" required>
+    <p class="errMsg" *ngIf="!BloodSugarTxt.valid && BloodSugarTxt.touched">BloodSuger is required</p>
+  </div>
+
+  <br>
+  <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">Save</button>
+  <br><br>
+</form>
+
+<div style="text-align: center;">
+  <button type="submit" class="btn btn-primary" (click)="load_Databtn()">load data
+    Automatic</button>
+</div>
